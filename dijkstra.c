@@ -14,15 +14,13 @@ void dijkstra(int start) {
     distance[start] = 0;
     for(int count = 0; count < n-1; count++) {
         int min = INF;
-        int u = -1;
+        int u;
         for(int v = 0; v < n; v++) {
             if(!visited[v] && distance[v] <= min) {
                 min = distance[v];
                 u = v;
             }
         }
-        if(u == -1) 
-        break;
         visited[u] = 1;
         for(int v = 0; v < n; v++) {
             if(!visited[v] && adj[u][v] && distance[u] != INF) {
